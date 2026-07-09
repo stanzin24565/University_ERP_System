@@ -1,68 +1,165 @@
------University ERP System (Java Swing)------
----Overview----
+# 🎓 University ERP System
 
-The University ERP System is a desktop-based application developed using Java Swing that manages core academic workflows such as student enrollment, grading, transcript generation, and administrative control.
+> A desktop-based University Enterprise Resource Planning (ERP) system built using Java Swing to streamline academic and administrative workflows through secure authentication, role-based access control, and efficient course management.
 
-The system follows Object-Oriented Programming (OOP) principles, implements role-based access control, and ensures secure authentication using password hashing.
+---
 
-The application starts from a centralized Login Frame, which routes users based on their role (Admin / Faculty / Student).
+## 📌 Overview
 
-------Key Features-----
+The University ERP System is a Java desktop application that enables students, instructors, and administrators to manage academic activities through a unified platform.
 
-Secure login system with password hashing
+The application follows a layered architecture, separating authentication, business logic, database operations, and user interfaces. Authentication is handled independently from academic data using two dedicated databases, improving security and maintainability.
 
-Role-based access control (Admin, Faculty, Student)
+---
 
-Student enrollment and course management
+## ✨ Features
 
-Grade entry and GPA calculation
+### 👨‍🎓 Student
 
-Transcript generation
+- Secure Login
+- Browse Course Catalog
+- Register & Drop Courses
+- View Timetable
+- View Grades
+- Download Transcript (CSV/PDF)
 
-Admin-controlled maintenance mode
+---
 
-Dual-database architecture for separation of concerns
+### 👨‍🏫 Instructor
 
-Interactive GUI built using Java Swing
+- Manage Assigned Sections
+- Enter Assessment Scores
+- Automatic Final Grade Calculation
+- View Class Statistics
 
------Tech Stack------
-Category	Technology
-Language	Java
-GUI	Java Swing
-Design	OOP (MVC-inspired structure)
-Security	Password Hashing (UNIX shadow-style)
-IDE	IntelliJ IDEA / Eclipse
-OS	Cross-platform
+---
 
-------How to Run the Project----
-Run the Application
+### 👨‍💼 Administrator
 
-The application starts from the Login Frame.
+- Add Students & Instructors
+- Create Courses & Sections
+- Assign Instructors
+- Toggle Maintenance Mode
+- Manage Academic Records
 
- Run this file:
+---
 
-LoginFrame.java
+## 🔒 Security Features
 
+- BCrypt Password Hashing
+- Separate Authentication Database
+- Role-Based Access Control (RBAC)
+- Session Management
+- Secure Password Verification
 
-In IntelliJ:
+---
 
-Right-click LoginFrame.java
+## 🏗️ System Architecture
 
-Click Run 'LoginFrame.main()'
+```
+                  Java Swing UI
+                        │
+                Service Layer
+                        │
+      ┌─────────────────┴─────────────────┐
+      │                                   │
+ Authentication DB                 ERP Database
+(Usernames & Passwords)     (Students, Courses,
+                              Sections, Grades)
+```
 
---- Login Flow---
+---
 
-User launches LoginFrame
+## 🛠 Tech Stack
 
-Credentials are authenticated securely
+| Category | Technologies |
+|-----------|--------------|
+| Language | Java |
+| GUI | Java Swing |
+| Database | MySQL |
+| Connectivity | JDBC |
+| Security | BCrypt Password Hashing |
+| Design | Object-Oriented Programming |
 
-System identifies the user role
+---
 
-User is redirected to the appropriate dashboard:
+## 🧠 Core Concepts Used
 
-Admin Panel
+- Object-Oriented Programming
+- JDBC
+- Database Design
+- Authentication & Authorization
+- Role-Based Access Control
+- Layered Architecture
+- Exception Handling
+- File Export (CSV/PDF)
 
-instructor Panel
+---
 
-Student Panel
- 
+## 📂 Project Structure
+
+```
+src/
+│
+├── auth/
+├── ui/
+│   ├── student/
+│   ├── instructor/
+│   └── admin/
+├── service/
+├── data/
+├── domain/
+├── access/
+└── util/
+```
+
+---
+
+## 🚀 How It Works
+
+1. User logs in through the authentication system.
+2. Credentials are verified using hashed passwords.
+3. User role is identified.
+4. Appropriate dashboard is loaded.
+5. Business operations are validated through the service layer.
+6. ERP database is updated securely.
+
+---
+
+## 📸 Screenshots
+
+> Login Page
+
+> Student Dashboard
+
+> Instructor Dashboard
+
+> Admin Dashboard
+
+> Course Registration
+
+> Grade Management
+
+---
+
+## 🎥 Demo
+
+*A short demo showcasing login, course registration, grading, and maintenance mode.*
+
+---
+
+## 🚀 Future Improvements
+
+- Email Notifications
+- Attendance Management
+- Fee Payment Portal
+- Cloud Deployment
+- REST API Version
+- Mobile Application
+- Docker Support
+
+---
+
+## 📚 What I Learned
+
+This project strengthened my understanding of software engineering principles beyond writing code. I gained practical experience in designing layered applications, implementing secure authentication, managing relational databases, enforcing role-based access control, and structuring desktop applications using Java Swing and JDBC.
